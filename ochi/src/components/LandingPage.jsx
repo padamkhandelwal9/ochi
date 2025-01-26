@@ -1,20 +1,26 @@
+import { motion } from "framer-motion";
 import React from "react";
 import { FaArrowUpLong } from "react-icons/fa6";
 
 function LandingPage() {
   return (
-    <div className="w-full h-screen bg-zinc-900 pt-1">
+    <div data-scroll data-scroll-section   data-scroll-speed='-.3' className="w-full h-screen bg-zinc-900 pt-1">
       <div className="textstructure mt-52 px-20">
         {["we create", "Eye-opening", "Presentations"].map((item, index) => {
           return (
             <div className="masker">
-              <div className="w-fit flex items-end overflow-hidden">
+              <div className="w-fit flex items-end">
                 {index === 1 && (
-                  <div className="mr-[vw] w-[8vw] rounded-md h-[5.1vw] -top-[2vw] bg-green-500"></div>
+                  <motion.div 
+                  initial={{width:0}} 
+                  animate={{width:"8vw"}} 
+                  transition={{ease:[0.76,0,0.24,1],duration:1}} 
+                  className="mr-[vw] mr-4 w-[8vw] rounded-md h-[5.1vw] -top-[2vw] bg-cover bg-[url(https://ochi.design/wp-content/uploads/2022/04/content-image01.jpg)]">
+                  </motion.div>
                 )}
                 <h1
                   key={index}
-                  className='pt-[2vw] -mb-[0.1vw] uppercase text-[7vw] leading-[.75] font-[""]'
+                  className='pt-[2vw] -mb-[0.1vw] uppercase text-[7vw] leading-[.75] font-["Neue Montreal"] font-semibold'
                 >
                   {item}
                 </h1>
